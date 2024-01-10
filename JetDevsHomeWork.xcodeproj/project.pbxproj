@@ -42,6 +42,7 @@
 		9EC6505DC386FCB04480F4BB /* Pods_JetDevsHomeWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F00AF71BC0DB1CFCDB921924 /* Pods_JetDevsHomeWork.framework */; };
 		9FBC8F0B168679446BE08275 /* Pods_JetDevsHomeWorkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E168756431AD9B671DACC28B /* Pods_JetDevsHomeWorkTests.framework */; };
 		DD9CD5C395D5FAE03F59B68E /* Pods_JetDevsHomeWork_JetDevsHomeWorkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2FFF8B3EB514C818C31135B /* Pods_JetDevsHomeWork_JetDevsHomeWorkUITests.framework */; };
+		CE669B702B4CF2AE00A2E0F6 /* AccountRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B6F2B4CF2AE00A2E0F6 /* AccountRouter.swift */; };
 		CE669B732B4CF44D00A2E0F6 /* NetworkPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B722B4CF44D00A2E0F6 /* NetworkPath.swift */; };
 		CE669B752B4CF4D400A2E0F6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B742B4CF4D400A2E0F6 /* NetworkService.swift */; };
 		CE669B772B4CFDDD00A2E0F6 /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B762B4CFDDD00A2E0F6 /* NetworkTask.swift */; };
@@ -51,6 +52,9 @@
 		CE669B8D2B4D0AF200A2E0F6 /* Observable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B8C2B4D0AF200A2E0F6 /* Observable+Ext.swift */; };
 		CE669B8F2B4D0B1500A2E0F6 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B8E2B4D0B1500A2E0F6 /* ActivityIndicator.swift */; };
 		CE669B942B4D4AAD00A2E0F6 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B932B4D4AAD00A2E0F6 /* Date+Extension.swift */; };
+		CE669B972B4D6CEB00A2E0F6 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B962B4D6CEB00A2E0F6 /* AccountViewModel.swift */; };
+		CE669B992B4D9FBA00A2E0F6 /* FloatingTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE669B982B4D9FBA00A2E0F6 /* FloatingTextField.xib */; };
+		CE669B9B2B4DA33E00A2E0F6 /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B9A2B4DA33E00A2E0F6 /* FloatingTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +122,7 @@
 		E168756431AD9B671DACC28B /* Pods_JetDevsHomeWorkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetDevsHomeWorkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F00AF71BC0DB1CFCDB921924 /* Pods_JetDevsHomeWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetDevsHomeWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7B560239606A0E97A233578 /* Pods-JetDevsHomeWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetDevsHomeWork.release.xcconfig"; path = "Target Support Files/Pods-JetDevsHomeWork/Pods-JetDevsHomeWork.release.xcconfig"; sourceTree = "<group>"; };
+		CE669B6F2B4CF2AE00A2E0F6 /* AccountRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRouter.swift; sourceTree = "<group>"; };
 		CE669B722B4CF44D00A2E0F6 /* NetworkPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPath.swift; sourceTree = "<group>"; };
 		CE669B742B4CF4D400A2E0F6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		CE669B762B4CFDDD00A2E0F6 /* NetworkTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
@@ -127,6 +132,9 @@
 		CE669B8C2B4D0AF200A2E0F6 /* Observable+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Ext.swift"; sourceTree = "<group>"; };
 		CE669B8E2B4D0B1500A2E0F6 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		CE669B932B4D4AAD00A2E0F6 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		CE669B962B4D6CEB00A2E0F6 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		CE669B982B4D9FBA00A2E0F6 /* FloatingTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FloatingTextField.xib; path = JetDevsHomeWork/Account/ViewModel/View/FloatingTextField.xib; sourceTree = SOURCE_ROOT; };
+		CE669B9A2B4DA33E00A2E0F6 /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FloatingTextField.swift; path = JetDevsHomeWork/Account/ViewModel/View/FloatingTextField.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,8 +246,9 @@
 		4E677C01272B8367006E325E /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				CE669B952B4D6CD600A2E0F6 /* ViewModel */,
+				CE669B6E2B4CF29A00A2E0F6 /* Router */,
 				4E677C07272B83DD006E325E /* Views */,
-				4E677C06272B83D5006E325E /* ViewModel */,
 				4E677C05272B83CA006E325E /* ViewController */,
 			);
 			path = Account;
@@ -277,13 +286,6 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		4E677C06272B83D5006E325E /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		4E677C07272B83DD006E325E /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +320,8 @@
 		4E677C0B272B83FA006E325E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CE669B982B4D9FBA00A2E0F6 /* FloatingTextField.xib */,
+				CE669B9A2B4DA33E00A2E0F6 /* FloatingTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -387,17 +391,18 @@
 		C87474AC52CF468FB6DCCA19 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CB6150528480C26B23B54A3E /* Pods-JetDevsHomeWork.debug.xcconfig */,
-				F7B560239606A0E97A233578 /* Pods-JetDevsHomeWork.release.xcconfig */,
-				44E25A9D32B01E7986F6EE72 /* Pods-JetDevsHomeWork-JetDevsHomeWorkUITests.debug.xcconfig */,
-				07853C962945789A7D328A8F /* Pods-JetDevsHomeWork-JetDevsHomeWorkUITests.release.xcconfig */,
-				4A78362750DC2D3CF1FB868C /* Pods-JetDevsHomeWorkTests.debug.xcconfig */,
-				B3EC5ABA8B83EB7FC725CD65 /* Pods-JetDevsHomeWorkTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		F06A01B79BA78652B8652EA7 /* Frameworks */ = {
+		CE669B6E2B4CF29A00A2E0F6 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CE669B6F2B4CF2AE00A2E0F6 /* AccountRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		CE669B712B4CF43800A2E0F6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,6 +439,12 @@
 			path = Date;
 			sourceTree = "<group>";
 		};
+		CE669B952B4D6CD600A2E0F6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CE669B962B4D6CEB00A2E0F6 /* AccountViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -546,6 +557,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E677C4527322FA4006E325E /* Lato-Heavy.ttf in Resources */,
+				CE669B992B4D9FBA00A2E0F6 /* FloatingTextField.xib in Resources */,
 				4E677C3B27322FA4006E325E /* Lato-Italic.ttf in Resources */,
 				4E677BDA272B8282006E325E /* LaunchScreen.storyboard in Resources */,
 				4E677C3C27322FA4006E325E /* Lato-Hairline.ttf in Resources */,
@@ -714,6 +726,7 @@
 			files = (
 				CE669B752B4CF4D400A2E0F6 /* NetworkService.swift in Sources */,
 				CE669B772B4CFDDD00A2E0F6 /* NetworkTask.swift in Sources */,
+				CE669B702B4CF2AE00A2E0F6 /* AccountRouter.swift in Sources */,
 				4E677BFF272B8319006E325E /* BaseTabBarController.swift in Sources */,
 				CE669B8F2B4D0B1500A2E0F6 /* ActivityIndicator.swift in Sources */,
 				CE669B8D2B4D0AF200A2E0F6 /* Observable+Ext.swift in Sources */,
@@ -725,6 +738,8 @@
 				CE669B852B4D075300A2E0F6 /* ViewModelType.swift in Sources */,
 				4E677C4C273230E5006E325E /* UIFont+JetDevs.swift in Sources */,
 				CE669B7D2B4D00E000A2E0F6 /* JSON+Extension.swift in Sources */,
+				CE669B9B2B4DA33E00A2E0F6 /* FloatingTextField.swift in Sources */,
+				CE669B972B4D6CEB00A2E0F6 /* AccountViewModel.swift in Sources */,
 				4E677C15272B8650006E325E /* Constants.swift in Sources */,
 				4E677BCE272B827F006E325E /* AppDelegate.swift in Sources */,
 				4E677C18272B88A6006E325E /* HomeViewController.swift in Sources */,
