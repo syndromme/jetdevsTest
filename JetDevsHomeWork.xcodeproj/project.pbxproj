@@ -45,6 +45,9 @@
 		CE669B732B4CF44D00A2E0F6 /* NetworkPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B722B4CF44D00A2E0F6 /* NetworkPath.swift */; };
 		CE669B752B4CF4D400A2E0F6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B742B4CF4D400A2E0F6 /* NetworkService.swift */; };
 		CE669B772B4CFDDD00A2E0F6 /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B762B4CFDDD00A2E0F6 /* NetworkTask.swift */; };
+		CE669B802B4D04D200A2E0F6 /* ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B7F2B4D04D200A2E0F6 /* ErrorTracker.swift */; };
+		CE669B8D2B4D0AF200A2E0F6 /* Observable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B8C2B4D0AF200A2E0F6 /* Observable+Ext.swift */; };
+		CE669B8F2B4D0B1500A2E0F6 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B8E2B4D0B1500A2E0F6 /* ActivityIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +118,9 @@
 		CE669B722B4CF44D00A2E0F6 /* NetworkPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPath.swift; sourceTree = "<group>"; };
 		CE669B742B4CF4D400A2E0F6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		CE669B762B4CFDDD00A2E0F6 /* NetworkTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
+		CE669B7F2B4D04D200A2E0F6 /* ErrorTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTracker.swift; sourceTree = "<group>"; };
+		CE669B8C2B4D0AF200A2E0F6 /* Observable+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Ext.swift"; sourceTree = "<group>"; };
+		CE669B8E2B4D0B1500A2E0F6 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +319,7 @@
 		4E677C12272B860A006E325E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CE669B7E2B4D04C100A2E0F6 /* Utility */,
 				4E677C4927323092006E325E /* Extension */,
 				4E677C13272B862C006E325E /* Constants */,
 			);
@@ -390,6 +397,16 @@
 				CE669B762B4CFDDD00A2E0F6 /* NetworkTask.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		CE669B7E2B4D04C100A2E0F6 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				CE669B7F2B4D04D200A2E0F6 /* ErrorTracker.swift */,
+				CE669B8C2B4D0AF200A2E0F6 /* Observable+Ext.swift */,
+				CE669B8E2B4D0B1500A2E0F6 /* ActivityIndicator.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 			isa = PBXGroup;
@@ -680,6 +697,9 @@
 				CE669B752B4CF4D400A2E0F6 /* NetworkService.swift in Sources */,
 				CE669B772B4CFDDD00A2E0F6 /* NetworkTask.swift in Sources */,
 				4E677BFF272B8319006E325E /* BaseTabBarController.swift in Sources */,
+				CE669B8F2B4D0B1500A2E0F6 /* ActivityIndicator.swift in Sources */,
+				CE669B8D2B4D0AF200A2E0F6 /* Observable+Ext.swift in Sources */,
+				CE669B802B4D04D200A2E0F6 /* ErrorTracker.swift in Sources */,
 				CE669B732B4CF44D00A2E0F6 /* NetworkPath.swift in Sources */,
 				4E677C10272B8455006E325E /* AccountViewController.swift in Sources */,
 				4E677BD2272B827F006E325E /* ViewController.swift in Sources */,
