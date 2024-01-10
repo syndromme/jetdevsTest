@@ -42,6 +42,9 @@
 		9EC6505DC386FCB04480F4BB /* Pods_JetDevsHomeWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F00AF71BC0DB1CFCDB921924 /* Pods_JetDevsHomeWork.framework */; };
 		9FBC8F0B168679446BE08275 /* Pods_JetDevsHomeWorkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E168756431AD9B671DACC28B /* Pods_JetDevsHomeWorkTests.framework */; };
 		DD9CD5C395D5FAE03F59B68E /* Pods_JetDevsHomeWork_JetDevsHomeWorkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2FFF8B3EB514C818C31135B /* Pods_JetDevsHomeWork_JetDevsHomeWorkUITests.framework */; };
+		CE669B732B4CF44D00A2E0F6 /* NetworkPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B722B4CF44D00A2E0F6 /* NetworkPath.swift */; };
+		CE669B752B4CF4D400A2E0F6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B742B4CF4D400A2E0F6 /* NetworkService.swift */; };
+		CE669B772B4CFDDD00A2E0F6 /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B762B4CFDDD00A2E0F6 /* NetworkTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +112,9 @@
 		E168756431AD9B671DACC28B /* Pods_JetDevsHomeWorkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetDevsHomeWorkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F00AF71BC0DB1CFCDB921924 /* Pods_JetDevsHomeWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetDevsHomeWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7B560239606A0E97A233578 /* Pods-JetDevsHomeWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetDevsHomeWork.release.xcconfig"; path = "Target Support Files/Pods-JetDevsHomeWork/Pods-JetDevsHomeWork.release.xcconfig"; sourceTree = "<group>"; };
+		CE669B722B4CF44D00A2E0F6 /* NetworkPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPath.swift; sourceTree = "<group>"; };
+		CE669B742B4CF4D400A2E0F6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		CE669B762B4CFDDD00A2E0F6 /* NetworkTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +176,7 @@
 				4E677C00272B8360006E325E /* Home */,
 				4E677BFD272B82D9006E325E /* TabBar */,
 				4E677C2427322F70006E325E /* Fonts */,
+				CE669B712B4CF43800A2E0F6 /* Network */,
 				4E677BCD272B827F006E325E /* AppDelegate.swift */,
 				4E677BD1272B827F006E325E /* ViewController.swift */,
 				4E677BD3272B827F006E325E /* Main.storyboard */,
@@ -375,6 +382,16 @@
 			sourceTree = "<group>";
 		};
 		F06A01B79BA78652B8652EA7 /* Frameworks */ = {
+		CE669B712B4CF43800A2E0F6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CE669B722B4CF44D00A2E0F6 /* NetworkPath.swift */,
+				CE669B742B4CF4D400A2E0F6 /* NetworkService.swift */,
+				CE669B762B4CFDDD00A2E0F6 /* NetworkTask.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 			isa = PBXGroup;
 			children = (
 				F00AF71BC0DB1CFCDB921924 /* Pods_JetDevsHomeWork.framework */,
@@ -660,7 +677,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE669B752B4CF4D400A2E0F6 /* NetworkService.swift in Sources */,
+				CE669B772B4CFDDD00A2E0F6 /* NetworkTask.swift in Sources */,
 				4E677BFF272B8319006E325E /* BaseTabBarController.swift in Sources */,
+				CE669B732B4CF44D00A2E0F6 /* NetworkPath.swift in Sources */,
 				4E677C10272B8455006E325E /* AccountViewController.swift in Sources */,
 				4E677BD2272B827F006E325E /* ViewController.swift in Sources */,
 				4E677C4C273230E5006E325E /* UIFont+JetDevs.swift in Sources */,
