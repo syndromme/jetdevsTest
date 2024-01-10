@@ -22,3 +22,6 @@ let statusBarNavigationBarHeight: CGFloat = isIPhoneX ? 88.0 : 64.0
 let tabbarSafeBottomMargin: CGFloat = isIPhoneX ? 34.0 : 0.0
 let tabBarHeight: CGFloat = isIPhoneX ? (tabBarTrueHeight+34.0) : tabBarTrueHeight
 let tabBarTrueHeight: CGFloat = 49.0
+let isDebug = true
+let debugBaseURL = "https://jetdevs.wiremockapi.cloud/"
+let prodBaseURL = "https://jetdevs.wiremockapi.cloud/"
