@@ -42,13 +42,18 @@
 		9EC6505DC386FCB04480F4BB /* Pods_JetDevsHomeWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F00AF71BC0DB1CFCDB921924 /* Pods_JetDevsHomeWork.framework */; };
 		9FBC8F0B168679446BE08275 /* Pods_JetDevsHomeWorkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E168756431AD9B671DACC28B /* Pods_JetDevsHomeWorkTests.framework */; };
 		DD9CD5C395D5FAE03F59B68E /* Pods_JetDevsHomeWork_JetDevsHomeWorkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2FFF8B3EB514C818C31135B /* Pods_JetDevsHomeWork_JetDevsHomeWorkUITests.framework */; };
+		CE669B6B2B4CE8DE00A2E0F6 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE669B6A2B4CE8DE00A2E0F6 /* LoginViewController.xib */; };
+		CE669B6D2B4CF1A000A2E0F6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B6C2B4CF1A000A2E0F6 /* LoginViewController.swift */; };
 		CE669B702B4CF2AE00A2E0F6 /* AccountRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B6F2B4CF2AE00A2E0F6 /* AccountRouter.swift */; };
 		CE669B732B4CF44D00A2E0F6 /* NetworkPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B722B4CF44D00A2E0F6 /* NetworkPath.swift */; };
 		CE669B752B4CF4D400A2E0F6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B742B4CF4D400A2E0F6 /* NetworkService.swift */; };
 		CE669B772B4CFDDD00A2E0F6 /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B762B4CFDDD00A2E0F6 /* NetworkTask.swift */; };
 		CE669B7D2B4D00E000A2E0F6 /* JSON+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B7C2B4D00E000A2E0F6 /* JSON+Extension.swift */; };
 		CE669B802B4D04D200A2E0F6 /* ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B7F2B4D04D200A2E0F6 /* ErrorTracker.swift */; };
+		CE669B822B4D072100A2E0F6 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B812B4D072100A2E0F6 /* LoginViewModel.swift */; };
 		CE669B852B4D075300A2E0F6 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B842B4D075300A2E0F6 /* ViewModelType.swift */; };
+		CE669B882B4D09BF00A2E0F6 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B872B4D09BF00A2E0F6 /* LoginModel.swift */; };
+		CE669B8B2B4D0A0700A2E0F6 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B8A2B4D0A0700A2E0F6 /* LoginRouter.swift */; };
 		CE669B8D2B4D0AF200A2E0F6 /* Observable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B8C2B4D0AF200A2E0F6 /* Observable+Ext.swift */; };
 		CE669B8F2B4D0B1500A2E0F6 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B8E2B4D0B1500A2E0F6 /* ActivityIndicator.swift */; };
 		CE669B942B4D4AAD00A2E0F6 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B932B4D4AAD00A2E0F6 /* Date+Extension.swift */; };
@@ -122,13 +127,18 @@
 		E168756431AD9B671DACC28B /* Pods_JetDevsHomeWorkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetDevsHomeWorkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F00AF71BC0DB1CFCDB921924 /* Pods_JetDevsHomeWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetDevsHomeWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7B560239606A0E97A233578 /* Pods-JetDevsHomeWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetDevsHomeWork.release.xcconfig"; path = "Target Support Files/Pods-JetDevsHomeWork/Pods-JetDevsHomeWork.release.xcconfig"; sourceTree = "<group>"; };
+		CE669B6A2B4CE8DE00A2E0F6 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoginViewController.xib; path = "JetDevsHomeWork/Login/View Controller/LoginViewController.xib"; sourceTree = SOURCE_ROOT; };
+		CE669B6C2B4CF1A000A2E0F6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "JetDevsHomeWork/Login/View Controller/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
 		CE669B6F2B4CF2AE00A2E0F6 /* AccountRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRouter.swift; sourceTree = "<group>"; };
 		CE669B722B4CF44D00A2E0F6 /* NetworkPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPath.swift; sourceTree = "<group>"; };
 		CE669B742B4CF4D400A2E0F6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		CE669B762B4CFDDD00A2E0F6 /* NetworkTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
 		CE669B7C2B4D00E000A2E0F6 /* JSON+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSON+Extension.swift"; sourceTree = "<group>"; };
 		CE669B7F2B4D04D200A2E0F6 /* ErrorTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTracker.swift; sourceTree = "<group>"; };
+		CE669B812B4D072100A2E0F6 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		CE669B842B4D075300A2E0F6 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		CE669B872B4D09BF00A2E0F6 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		CE669B8A2B4D0A0700A2E0F6 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		CE669B8C2B4D0AF200A2E0F6 /* Observable+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Ext.swift"; sourceTree = "<group>"; };
 		CE669B8E2B4D0B1500A2E0F6 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		CE669B932B4D4AAD00A2E0F6 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
@@ -296,6 +306,8 @@
 		4E677C08272B83E4006E325E /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				CE669B892B4D09FB00A2E0F6 /* Router */,
+				CE669B862B4D09B200A2E0F6 /* Model */,
 				4E677C0B272B83FA006E325E /* Views */,
 				4E677C0A272B83F5006E325E /* ViewModel */,
 				4E677C09272B83EE006E325E /* ViewController */,
@@ -306,6 +318,8 @@
 		4E677C09272B83EE006E325E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				CE669B6A2B4CE8DE00A2E0F6 /* LoginViewController.xib */,
+				CE669B6C2B4CF1A000A2E0F6 /* LoginViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -313,6 +327,7 @@
 		4E677C0A272B83F5006E325E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				CE669B812B4D072100A2E0F6 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -429,6 +444,22 @@
 				CE669B8E2B4D0B1500A2E0F6 /* ActivityIndicator.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		CE669B862B4D09B200A2E0F6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE669B872B4D09BF00A2E0F6 /* LoginModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE669B892B4D09FB00A2E0F6 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CE669B8A2B4D0A0700A2E0F6 /* LoginRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		CE669B922B4D4AA100A2E0F6 /* Date */ = {
@@ -565,6 +596,7 @@
 				4E677C3927322FA4006E325E /* Lato-Medium.ttf in Resources */,
 				4E677C3D27322FA4006E325E /* Lato-HeavyItalic.ttf in Resources */,
 				4E677C4127322FA4006E325E /* Lato-MediumItalic.ttf in Resources */,
+				CE669B6B2B4CE8DE00A2E0F6 /* LoginViewController.xib in Resources */,
 				4E677BD7272B8282006E325E /* Assets.xcassets in Resources */,
 				4E677C4327322FA4006E325E /* Lato-Bold.ttf in Resources */,
 				4E677C19272B88A6006E325E /* HomeViewController.xib in Resources */,
@@ -731,6 +763,7 @@
 				CE669B8F2B4D0B1500A2E0F6 /* ActivityIndicator.swift in Sources */,
 				CE669B8D2B4D0AF200A2E0F6 /* Observable+Ext.swift in Sources */,
 				CE669B942B4D4AAD00A2E0F6 /* Date+Extension.swift in Sources */,
+				CE669B822B4D072100A2E0F6 /* LoginViewModel.swift in Sources */,
 				CE669B802B4D04D200A2E0F6 /* ErrorTracker.swift in Sources */,
 				CE669B732B4CF44D00A2E0F6 /* NetworkPath.swift in Sources */,
 				4E677C10272B8455006E325E /* AccountViewController.swift in Sources */,
@@ -738,8 +771,11 @@
 				CE669B852B4D075300A2E0F6 /* ViewModelType.swift in Sources */,
 				4E677C4C273230E5006E325E /* UIFont+JetDevs.swift in Sources */,
 				CE669B7D2B4D00E000A2E0F6 /* JSON+Extension.swift in Sources */,
+				CE669B882B4D09BF00A2E0F6 /* LoginModel.swift in Sources */,
 				CE669B9B2B4DA33E00A2E0F6 /* FloatingTextField.swift in Sources */,
 				CE669B972B4D6CEB00A2E0F6 /* AccountViewModel.swift in Sources */,
+				CE669B8B2B4D0A0700A2E0F6 /* LoginRouter.swift in Sources */,
+				CE669B6D2B4CF1A000A2E0F6 /* LoginViewController.swift in Sources */,
 				4E677C15272B8650006E325E /* Constants.swift in Sources */,
 				4E677BCE272B827F006E325E /* AppDelegate.swift in Sources */,
 				4E677C18272B88A6006E325E /* HomeViewController.swift in Sources */,
