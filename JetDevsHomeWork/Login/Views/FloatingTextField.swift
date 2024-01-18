@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 let animationDuration = 1.0
 
@@ -105,14 +107,14 @@ extension FloatingTextField {
         }
     }
     
-    func showError(_ message: String?) {
+    func showError(_ message: String = "") {
         errorLabel.text = message
-        errorLabel.superview?.isHidden = message == nil
+        errorLabel.superview?.isHidden = message.isEmpty
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         self.updatePlaceholderFrame(!(self.inputField.text?.isEmpty ?? true))
-        self.showError(nil)
+        self.showError()
     }
 }
 
@@ -150,5 +152,14 @@ extension UIView {
             nib.topAnchor.constraint(equalTo: self.topAnchor),
             nib.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
+    }
+}
+
+extension Reactive where Base: FloatingTextField {
+    
+    var validationResult: Binder<ValidationResult> {
+        return Binder(base) { textField, result in
+            textField.showError(result.description)
+        }
     }
 }

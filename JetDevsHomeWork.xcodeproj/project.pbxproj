@@ -42,13 +42,10 @@
 		CE669B6B2B4CE8DE00A2E0F6 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE669B6A2B4CE8DE00A2E0F6 /* LoginViewController.xib */; };
 		CE669B6D2B4CF1A000A2E0F6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B6C2B4CF1A000A2E0F6 /* LoginViewController.swift */; };
 		CE669B702B4CF2AE00A2E0F6 /* AccountRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B6F2B4CF2AE00A2E0F6 /* AccountRouter.swift */; };
-		CE669B732B4CF44D00A2E0F6 /* NetworkPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B722B4CF44D00A2E0F6 /* NetworkPath.swift */; };
 		CE669B752B4CF4D400A2E0F6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B742B4CF4D400A2E0F6 /* NetworkService.swift */; };
-		CE669B772B4CFDDD00A2E0F6 /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B762B4CFDDD00A2E0F6 /* NetworkTask.swift */; };
 		CE669B7D2B4D00E000A2E0F6 /* JSON+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B7C2B4D00E000A2E0F6 /* JSON+Extension.swift */; };
 		CE669B802B4D04D200A2E0F6 /* ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B7F2B4D04D200A2E0F6 /* ErrorTracker.swift */; };
 		CE669B822B4D072100A2E0F6 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B812B4D072100A2E0F6 /* LoginViewModel.swift */; };
-		CE669B852B4D075300A2E0F6 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B842B4D075300A2E0F6 /* ViewModelType.swift */; };
 		CE669B882B4D09BF00A2E0F6 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B872B4D09BF00A2E0F6 /* LoginModel.swift */; };
 		CE669B8B2B4D0A0700A2E0F6 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B8A2B4D0A0700A2E0F6 /* LoginRouter.swift */; };
 		CE669B8D2B4D0AF200A2E0F6 /* Observable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B8C2B4D0AF200A2E0F6 /* Observable+Ext.swift */; };
@@ -57,6 +54,8 @@
 		CE669B972B4D6CEB00A2E0F6 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B962B4D6CEB00A2E0F6 /* AccountViewModel.swift */; };
 		CE669B992B4D9FBA00A2E0F6 /* FloatingTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE669B982B4D9FBA00A2E0F6 /* FloatingTextField.xib */; };
 		CE669B9B2B4DA33E00A2E0F6 /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B9A2B4DA33E00A2E0F6 /* FloatingTextField.swift */; };
+		CE82CA382B565D0A00685CC6 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82CA372B565D0A00685CC6 /* String+Extension.swift */; };
+		CE82CA3C2B58E17E00685CC6 /* Validation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82CA3B2B58E17E00685CC6 /* Validation+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,21 +117,20 @@
 		CE669B6A2B4CE8DE00A2E0F6 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoginViewController.xib; path = "JetDevsHomeWork/Login/View Controller/LoginViewController.xib"; sourceTree = SOURCE_ROOT; };
 		CE669B6C2B4CF1A000A2E0F6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "JetDevsHomeWork/Login/View Controller/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
 		CE669B6F2B4CF2AE00A2E0F6 /* AccountRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRouter.swift; sourceTree = "<group>"; };
-		CE669B722B4CF44D00A2E0F6 /* NetworkPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPath.swift; sourceTree = "<group>"; };
 		CE669B742B4CF4D400A2E0F6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		CE669B762B4CFDDD00A2E0F6 /* NetworkTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
 		CE669B7C2B4D00E000A2E0F6 /* JSON+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSON+Extension.swift"; sourceTree = "<group>"; };
 		CE669B7F2B4D04D200A2E0F6 /* ErrorTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTracker.swift; sourceTree = "<group>"; };
 		CE669B812B4D072100A2E0F6 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		CE669B842B4D075300A2E0F6 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		CE669B872B4D09BF00A2E0F6 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		CE669B8A2B4D0A0700A2E0F6 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		CE669B8C2B4D0AF200A2E0F6 /* Observable+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Ext.swift"; sourceTree = "<group>"; };
 		CE669B8E2B4D0B1500A2E0F6 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		CE669B932B4D4AAD00A2E0F6 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		CE669B962B4D6CEB00A2E0F6 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
-		CE669B982B4D9FBA00A2E0F6 /* FloatingTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FloatingTextField.xib; path = JetDevsHomeWork/Account/ViewModel/View/FloatingTextField.xib; sourceTree = SOURCE_ROOT; };
-		CE669B9A2B4DA33E00A2E0F6 /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FloatingTextField.swift; path = JetDevsHomeWork/Account/ViewModel/View/FloatingTextField.swift; sourceTree = SOURCE_ROOT; };
+		CE669B982B4D9FBA00A2E0F6 /* FloatingTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FloatingTextField.xib; path = JetDevsHomeWork/Login/Views/FloatingTextField.xib; sourceTree = SOURCE_ROOT; };
+		CE669B9A2B4DA33E00A2E0F6 /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FloatingTextField.swift; path = JetDevsHomeWork/Login/Views/FloatingTextField.swift; sourceTree = SOURCE_ROOT; };
+		CE82CA372B565D0A00685CC6 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		CE82CA3B2B58E17E00685CC6 /* Validation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Validation+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,9 +288,9 @@
 		4E677C08272B83E4006E325E /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				CE82CA3D2B58E55600685CC6 /* Views */,
 				CE669B892B4D09FB00A2E0F6 /* Router */,
 				CE669B862B4D09B200A2E0F6 /* Model */,
-				4E677C0B272B83FA006E325E /* Views */,
 				4E677C0A272B83F5006E325E /* ViewModel */,
 				4E677C09272B83EE006E325E /* ViewController */,
 			);
@@ -316,22 +314,12 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		4E677C0B272B83FA006E325E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				CE669B982B4D9FBA00A2E0F6 /* FloatingTextField.xib */,
-				CE669B9A2B4DA33E00A2E0F6 /* FloatingTextField.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		4E677C12272B860A006E325E /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				CE669B7E2B4D04C100A2E0F6 /* Utility */,
 				4E677C4927323092006E325E /* Extension */,
 				4E677C13272B862C006E325E /* Constants */,
-				CE669B842B4D075300A2E0F6 /* ViewModelType.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -372,6 +360,8 @@
 		4E677C4927323092006E325E /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				CE82CA3A2B58E15B00685CC6 /* Validations */,
+				CE82CA362B565CF900685CC6 /* String */,
 				CE669B922B4D4AA100A2E0F6 /* Date */,
 				CE669B7B2B4D00C700A2E0F6 /* JSON */,
 				4E677C4A273230A4006E325E /* UIFont */,
@@ -405,9 +395,7 @@
 		CE669B712B4CF43800A2E0F6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				CE669B722B4CF44D00A2E0F6 /* NetworkPath.swift */,
 				CE669B742B4CF4D400A2E0F6 /* NetworkService.swift */,
-				CE669B762B4CFDDD00A2E0F6 /* NetworkTask.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -460,6 +448,31 @@
 				CE669B962B4D6CEB00A2E0F6 /* AccountViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CE82CA362B565CF900685CC6 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				CE82CA372B565D0A00685CC6 /* String+Extension.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		CE82CA3A2B58E15B00685CC6 /* Validations */ = {
+			isa = PBXGroup;
+			children = (
+				CE82CA3B2B58E17E00685CC6 /* Validation+Extension.swift */,
+			);
+			path = Validations;
+			sourceTree = "<group>";
+		};
+		CE82CA3D2B58E55600685CC6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE669B982B4D9FBA00A2E0F6 /* FloatingTextField.xib */,
+				CE669B9A2B4DA33E00A2E0F6 /* FloatingTextField.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -635,8 +648,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE82CA3C2B58E17E00685CC6 /* Validation+Extension.swift in Sources */,
 				CE669B752B4CF4D400A2E0F6 /* NetworkService.swift in Sources */,
-				CE669B772B4CFDDD00A2E0F6 /* NetworkTask.swift in Sources */,
 				CE669B702B4CF2AE00A2E0F6 /* AccountRouter.swift in Sources */,
 				4E677BFF272B8319006E325E /* BaseTabBarController.swift in Sources */,
 				CE669B8F2B4D0B1500A2E0F6 /* ActivityIndicator.swift in Sources */,
@@ -644,11 +657,10 @@
 				CE669B942B4D4AAD00A2E0F6 /* Date+Extension.swift in Sources */,
 				CE669B822B4D072100A2E0F6 /* LoginViewModel.swift in Sources */,
 				CE669B802B4D04D200A2E0F6 /* ErrorTracker.swift in Sources */,
-				CE669B732B4CF44D00A2E0F6 /* NetworkPath.swift in Sources */,
 				4E677C10272B8455006E325E /* AccountViewController.swift in Sources */,
 				4E677BD2272B827F006E325E /* ViewController.swift in Sources */,
-				CE669B852B4D075300A2E0F6 /* ViewModelType.swift in Sources */,
 				4E677C4C273230E5006E325E /* UIFont+JetDevs.swift in Sources */,
+				CE82CA382B565D0A00685CC6 /* String+Extension.swift in Sources */,
 				CE669B7D2B4D00E000A2E0F6 /* JSON+Extension.swift in Sources */,
 				CE669B882B4D09BF00A2E0F6 /* LoginModel.swift in Sources */,
 				CE669B9B2B4DA33E00A2E0F6 /* FloatingTextField.swift in Sources */,

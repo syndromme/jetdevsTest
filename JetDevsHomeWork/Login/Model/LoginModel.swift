@@ -39,7 +39,7 @@ struct UserModel: Codable {
     
 }
 
-class ResponseModel<T: Codable>: Codable {
+class ResponseModel<T: Codable>: BaseResponseModel, Codable {
     
     var result: Int
     var errorMessage: String
@@ -50,4 +50,16 @@ class ResponseModel<T: Codable>: Codable {
         case errorMessage = "error_message"
     }
     
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        result = try container.decode(Int.self, forKey: .result)
+        errorMessage = try container.decode(String.self, forKey: .errorMessage)
+        data = try container.decode(T.self, forKey: .data)
+    }
+}
+
+protocol BaseResponseModel {
+    
+    var result: Int { get set }
+    var errorMessage: String { get set }
 }

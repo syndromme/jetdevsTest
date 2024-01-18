@@ -25,7 +25,13 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+        setupEmailField()
+        setupPasswordField()
+        bindViewModel()
+    }
+    
+// MARK: - UI
+    private func setupEmailField() {
         emailTextField.attributedPlaceholder = NSAttributedString(string: "Email",
                                                                   attributes: [.font: UIFont.latoRegularFont(size: 16),
                                                                                .foregroundColor: UIColor(red: 189/255, green: 189/255, blue: 189/255, alpha: 1)])
@@ -37,7 +43,9 @@ class LoginViewController: UIViewController {
         emailTextField.floatingColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)
         emailTextField.borderColor = UIColor(red: 189/255, green: 189/255, blue: 189/255, alpha: 1)
         emailTextField.errorFont = UIFont.latoRegularFont(size: 14)
-        
+    }
+    
+    private func setupPasswordField() {
         passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password",
                                                                   attributes: [.font: UIFont.latoRegularFont(size: 16),
                                                                                .foregroundColor: UIColor(red: 189/255, green: 189/255, blue: 189/255, alpha: 1)])
@@ -49,52 +57,45 @@ class LoginViewController: UIViewController {
         passwordTextField.borderColor = UIColor(red: 189/255, green: 189/255, blue: 189/255, alpha: 1)
         passwordTextField.errorFont = UIFont.latoRegularFont(size: 14)
         passwordTextField.isSecure = true
-        
-        self.viewModel = LoginViewModel(router: self.router!)
-        
+    }
+    
+// MARK: - ViewModel
+    private func bindViewModel() {
         let input = LoginViewModel.Input(
             loginTrigger: loginButton.rx.tap.asDriver(),
             closeTrigger: dismissButton.rx.tap.asDriver(),
             email: emailTextField.textField.rx.text.orEmpty.asDriver(),
             password: passwordTextField.textField.rx.text.orEmpty.asDriver()
         )
-
-        let output = viewModel!.transform(input: input)
-        [output.user.drive(),
-         output.error.drive(errorBinding),
-         output.emailValidation.drive(validationEmailBinding),
-         output.passwordValidation.drive(validationPasswordBinding),
-         output.dismiss.drive(),
-         output.hud.drive(progressBinding)
-        ].forEach({$0.disposed(by: disposeBag)})
+        
+        self.viewModel = LoginViewModel(router: self.router!, input: input)
+        self.viewModel?.emailValidation.bind(to: emailTextField.rx.validationResult).disposed(by: disposeBag)
+        self.viewModel?.passwordValidation.bind(to: passwordTextField.rx.validationResult).disposed(by: disposeBag)
+        self.viewModel?.errorTracker.drive(errorResponse).disposed(by: disposeBag)
+        self.viewModel?.activityIndicator.drive(progressBinding).disposed(by: disposeBag)
+        self.viewModel?.loginTrigger.drive(onNext: { result in
+            guard let user = result.data.user else {
+                self.showAlert(result.errorMessage)
+                return
+            }
+            self.router?.routeToAccount(user: user)
+        }, onCompleted: {
+            self.view.endEditing(true)
+        }).disposed(by: disposeBag)
+        
+        self.viewModel?.endEditing.drive(onNext: { _ in
+            self.view.endEditing(true)
+        }).disposed(by: disposeBag)
     }
     
-    var errorBinding: Binder<Error> {
+// MARK: - Binder
+    private var errorResponse: Binder<Error> {
         return Binder(self, binding: {(viewController, error) in
-            let alert = UIAlertController(title: "Error",
-                                          message: error.localizedDescription,
-                                          preferredStyle: .alert)
-            let action = UIAlertAction(title: "Dismiss",
-                                       style: UIAlertAction.Style.cancel,
-                                       handler: nil)
-            alert.addAction(action)
-            viewController.present(alert, animated: true, completion: nil)
+            viewController.showAlert(error.localizedDescription)
         })
     }
     
-    var validationEmailBinding: Binder<Error> {
-        return Binder(self) { _, error in
-            self.emailTextField.showError(error.localizedDescription)
-        }
-    }
-    
-    var validationPasswordBinding: Binder<Error> {
-        return Binder(self) { _, error in
-            self.passwordTextField.showError(error.localizedDescription)
-        }
-    }
-    
-    var progressBinding: Binder<Bool> {
+    private var progressBinding: Binder<Bool> {
         return Binder(self) { _, value in
             if value {
                 ProgressHUD.show("Authentication...")
@@ -102,5 +103,17 @@ class LoginViewController: UIViewController {
                 ProgressHUD.dismiss()
             }
         }
+    }
+
+// MARK: - Custom
+    private func showAlert(_ message: String) {
+        let alert = UIAlertController(title: "Error",
+                                      message: message,
+                                      preferredStyle: .alert)
+        let action = UIAlertAction(title: "Dismiss",
+                                   style: UIAlertAction.Style.cancel,
+                                   handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
 }

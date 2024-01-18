@@ -8,91 +8,107 @@
 import Foundation
 import RxCocoa
 import RxSwift
+import Alamofire
 
-protocol LoginUseCases {
+class LoginViewModel {
     
-    func login(parameter: LoginRequestModel) -> Observable<ResponseModel<LoginResponseModel>>
-}
-
-class LoginUseCase: LoginUseCases {
+    enum LoginService: NetworkService {
+        var method: Alamofire.HTTPMethod {
+            switch self {
+            default:
+                return .post
+            }
+        }
+        
+        var parameters: Alamofire.Parameters? {
+            switch self {
+            case .login(let parameters):
+                return parameters.dictionary
+            }
+        }
+        
+        var path: String {
+            switch self {
+            case .login:
+                return "login"
+            }
+        }
     
-    private var network: Network<ResponseModel<LoginResponseModel>>?
-
-    init() {
+        case login(parameters: LoginRequestModel)
     }
-    
-    func login(parameter: LoginRequestModel) -> Observable<ResponseModel<LoginResponseModel>> {
-        let service = NetworkService.login(parameter: parameter)
-        network = Network(networkService: service)
-        return (network?.getDataWithRawBody())!
-    }
-}
-
-final class LoginViewModel: ViewModelType {
     
     private let disposeBag = DisposeBag()
-    
-    private let useCase = LoginUseCase()
     private let router: LoginRouter
 
-    init(router: LoginRouter) {
+    var emailValidation: Observable<ValidationResult> = Observable.empty()
+    var passwordValidation: Observable<ValidationResult> = Observable.empty()
+    var loginTrigger: Driver<ResponseModel<LoginResponseModel>> = Driver.empty()
+    var endEditing: Driver<Void> = Driver.empty()
+    
+    let activityIndicator = ActivityIndicator()
+    let errorTracker = ErrorTracker()
+    let network: Network<ResponseModel<LoginResponseModel>> = Network()
+
+    init(router: LoginRouter, input: Input) {
         self.router = router
+        
+        emailValidation = input.email.asObservable().map({ data in
+            return self.validateEmail(data)
+        })
+        
+        passwordValidation = input.password.asObservable().map({ data in
+            return self.validatePassword(data)
+        })
+        
+        let data = Driver
+            .combineLatest(input.email, input.password) { (email, password) -> LoginRequestModel in
+                return LoginRequestModel(email: email, password: password) }
+
+        let validations = Observable.combineLatest(emailValidation, passwordValidation).map({ data in
+            return data.0 == .valid && data.1 == .valid
+        }).asDriverOnErrorJustComplete()
+        
+        endEditing = input.loginTrigger.asDriver()
+        
+        loginTrigger = input.loginTrigger.withLatestFrom(validations).filter { isvalid in
+            return isvalid
+        }.withLatestFrom(data).flatMapLatest { request in
+            let service = LoginService.login(parameters: request)
+            NetworkManager.shared.service = service
+            return self.network.load().trackError(self.errorTracker).trackActivity(self.activityIndicator).asDriverOnErrorJustComplete()
+        }
+        
+        _ = input.closeTrigger.asDriver().do(onNext: { _ in
+            self.router.dismiss()
+        }).drive().disposed(by: disposeBag)
     }
     
     deinit {
         print("\(self) dealloc")
     }
-    
-    func transform(input: Input) -> Output {
-        let activityIndicator = ActivityIndicator()
-        let errorTracker = ErrorTracker()
-        let emailTracker = ErrorTracker()
-        let passwordTracker = ErrorTracker()
+
+    private func validateEmail(_ email: String) -> ValidationResult {
+        if email.isEmpty {
+            return .empty
+        }
         
-        let data = Driver
-            .combineLatest(input.email, input.password) { (email, password) -> LoginRequestModel in
-                return LoginRequestModel(email: email, password: password) }
+        if !email.validatePattern(emailRegEx) {
+            return .failed(message: "Email not valid")
+        }
         
-        let loginAccount = input.loginTrigger.withLatestFrom(data).filter({ data in
-            if !self.validatePattern(text: data.email) {
-                let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Email not valid"])
-                emailTracker.onError(error)
-                return false
-            } else if !self.validateLength(text: data.password, size: (6, 15)) {
-                let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Password not valid"])
-                passwordTracker.onError(error)
-                return false
-            }
-            return true
-        }).flatMapLatest({ result in
-            return self.useCase.login(parameter: result).trackError(errorTracker).trackActivity(activityIndicator).asDriverOnErrorJustComplete()
-        }).do(onNext: { result in
-            if let user = result.data.user {
-                self.router.routeToAccount(user: user)
-            } else {
-                let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: result.errorMessage])
-                errorTracker.onError(error)
-            }
-        })
-        
-        let dismiss = input.closeTrigger.asDriver().do(onNext: {
-            self.router.dismiss()
-        })
-        
-        let activity = activityIndicator.asDriver()
-        
-        return Output(user: loginAccount, error: errorTracker.asDriver(), emailValidation: emailTracker.asDriver(), passwordValidation: passwordTracker.asDriver(), dismiss: dismiss, hud: activity)
+        return .valid
     }
     
-    func validatePattern(text: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+    private func validatePassword(_ password: String) -> ValidationResult {
+        if password.isEmpty {
+            return .empty
+        }
         
-        let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluate(with: text)
-    }
-    
-    func validateLength(text: String, size: (min: Int, max: Int)) -> Bool {
-        return (size.min...size.max).contains(text.count)
+        if !password.validatePattern(passwordRegEx) {
+            return .failed(message: "Password not valid")
+        }
+        
+        return .valid
     }
 }
 
@@ -104,15 +120,5 @@ extension LoginViewModel {
         let closeTrigger: Driver<Void>
         let email: Driver<String>
         let password: Driver<String>
-    }
-
-    struct Output {
-        
-        let user: Driver<ResponseModel<LoginResponseModel>>
-        let error: Driver<Error>
-        let emailValidation: Driver<Error>
-        let passwordValidation: Driver<Error>
-        let dismiss: Driver<Void>
-        let hud: Driver<Bool>
     }
 }

@@ -10,45 +10,35 @@ import RxSwift
 import RxAlamofire
 import Alamofire
 
-public protocol TargetType {
+public protocol NetworkService {
     
     var method: Alamofire.HTTPMethod { get }
-    var url: RxAlamofire.URL { get }
-    var parameters: Alamofire.Parameters { get }
+    var parameters: Alamofire.Parameters? { get }
+    var path: String { get }
 }
 
-enum NetworkService {
-    case login(parameter: LoginRequestModel)
-}
-
-extension NetworkService: TargetType {
+class NetworkManager {
     
-    private var baseUrl: URL {
-        return URL(string: isDebug ? debugBaseURL : prodBaseURL)!
-    }
+    public static let shared = NetworkManager()
     
-    public var method: Alamofire.HTTPMethod {
-        switch self {
-        default:
-            return .post
-        }
-    }
+    var baseURL: String = ""
+    var service: NetworkService?
     
-    public var url: URL {
-        return baseUrl.appendingPathComponent(NetworkPath.createPath(self))
-    }
+    private init() {}
     
-    public var parameters: Parameters {
-        return NetworkTask.createParams(self)
-    }
-    
-    public var rawBody: URLRequest {
+    var request: URLRequest {
+        let url = URL(string: baseURL)!
         var request = URLRequest(url: url)
-        request.httpMethod = method.rawValue
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        switch self {
-        case .login:
+        guard let service = service else {
+            return request
+        }
+        
+        let path = url.appendingPathComponent(service.path)
+        request.url = path
+        request.httpMethod = service.method.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        if let parameters = service.parameters {
             if let theJSONData = try? JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted) {
                 request.httpBody = theJSONData
             }
@@ -58,35 +48,24 @@ extension NetworkService: TargetType {
 }
 
 final class Network<T: Decodable> {
-    private let networkService: NetworkService
+    private let networkService: NetworkManager = NetworkManager.shared
     private let scheduler: ConcurrentDispatchQueueScheduler
     
-    init(networkService: NetworkService) {
-        self.networkService = networkService
+//    let reachability = Reachability()!
+    
+    init() {
         self.scheduler = ConcurrentDispatchQueueScheduler(qos: DispatchQoS(qosClass: .background, relativePriority: 1))
     }
     
-    func getData() -> Observable<T> {
+    func load() -> Observable<T> {
         return RxAlamofire
-            .request(networkService.method, networkService.url, parameters: networkService.parameters)
+            .request(networkService.request)
             .debug()
             .observeOn(scheduler)
             .data()
-            .map ({ data -> T in
+            .map({ data -> T in
+//                let result = String(data: data, encoding: .utf8)
                 return try JSONDecoder().decode(T.self, from: data)
             })
     }
-    
-    func getDataWithRawBody() -> Observable<T> {
-        return RxAlamofire
-            .request(networkService.rawBody)
-            .debug()
-            .observeOn(scheduler)
-            .data()
-            .map ({ data -> T in
-                let result = String(data: data, encoding: .utf8)
-                return try JSONDecoder().decode(T.self, from: data)
-            })
-    }
-    
 }

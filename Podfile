@@ -14,6 +14,7 @@ target 'JetDevsHomeWork' do
   pod 'TPKeyboardAvoidingSwift'
   pod 'SkyFloatingLabelTextField'
   pod 'ProgressHUD'
+  pod 'netfox'
 
   target 'JetDevsHomeWorkTests' do
     inherit! :search_paths

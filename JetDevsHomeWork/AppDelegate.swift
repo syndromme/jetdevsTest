@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import netfox
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,8 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		window?.rootViewController = BaseTabBarController()
 
 		window?.makeKeyAndVisible()
+        
+        NetworkManager.shared.baseURL = debugBaseURL
 		
+        NFX.sharedInstance().start()
+        
 		return true
 	}
 }
-
