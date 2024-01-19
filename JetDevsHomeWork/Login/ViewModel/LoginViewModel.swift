@@ -39,6 +39,7 @@ class LoginViewModel {
     
     private let disposeBag = DisposeBag()
     private let router: LoginRouter
+    private let dbManager = RealmManager<RMUser>()
 
     var emailValidation: Observable<ValidationResult> = Observable.empty()
     var passwordValidation: Observable<ValidationResult> = Observable.empty()
@@ -76,7 +77,10 @@ class LoginViewModel {
             let service = LoginService.login(parameters: request)
             NetworkManager.shared.service = service
             return self.network.load().trackError(self.errorTracker).trackActivity(self.activityIndicator).asDriverOnErrorJustComplete()
-        }
+        }.do(onNext: { response in
+            guard let user = response.data.user else { return }
+            _ = self.dbManager.save(entity: user.transform()).asDriverOnErrorJustComplete().drive()
+        })
         
         _ = input.closeTrigger.asDriver().do(onNext: { _ in
             self.router.dismiss()

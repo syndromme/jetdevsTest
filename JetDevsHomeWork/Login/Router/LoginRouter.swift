@@ -29,7 +29,6 @@ class LoginRouter: LoginRouterLogic {
         guard let destinationVC = self.navigationController.viewControllers.filter({ $0.isKind(of: AccountViewController.self)}).first as? AccountViewController else {
             return
         }
-        destinationVC.viewModel = AccountViewModel(user: user)
         self.dismiss()
     }
     

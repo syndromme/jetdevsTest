@@ -89,13 +89,19 @@ class LoginViewController: UIViewController {
     }
     
 // MARK: - Binder
-    private var errorResponse: Binder<Error> {
+    
+
+// MARK: - Custom
+}
+
+extension UIViewController {
+    var errorResponse: Binder<Error> {
         return Binder(self, binding: {(viewController, error) in
             viewController.showAlert(error.localizedDescription)
         })
     }
     
-    private var progressBinding: Binder<Bool> {
+    var progressBinding: Binder<Bool> {
         return Binder(self) { _, value in
             if value {
                 ProgressHUD.show("Authentication...")
@@ -104,9 +110,8 @@ class LoginViewController: UIViewController {
             }
         }
     }
-
-// MARK: - Custom
-    private func showAlert(_ message: String) {
+    
+    func showAlert(_ message: String) {
         let alert = UIAlertController(title: "Error",
                                       message: message,
                                       preferredStyle: .alert)

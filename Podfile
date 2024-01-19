@@ -14,6 +14,8 @@ target 'JetDevsHomeWork' do
   pod 'TPKeyboardAvoidingSwift'
   pod 'SkyFloatingLabelTextField'
   pod 'ProgressHUD'
+  pod 'RealmSwift'
+  pod 'RxRealm'
   pod 'netfox'
 
   target 'JetDevsHomeWorkTests' do

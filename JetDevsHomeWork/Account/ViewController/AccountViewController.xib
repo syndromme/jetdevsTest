@@ -24,7 +24,9 @@
             <connections>
                 <outlet property="daysLabel" destination="UAw-Oc-lPg" id="F7G-5L-SxP"/>
                 <outlet property="headImageView" destination="g7w-qB-4LN" id="xy1-C3-UGm"/>
+                <outlet property="loginButton" destination="Zoq-j2-Gbh" id="lj8-hH-gzC"/>
                 <outlet property="loginView" destination="gQk-Rv-H92" id="f3m-h3-mPJ"/>
+                <outlet property="logoutButton" destination="OJ8-G3-I3w" id="S4W-mR-CeT"/>
                 <outlet property="nameLabel" destination="Igt-oU-dvM" id="4cX-Kl-LnB"/>
                 <outlet property="nonLoginView" destination="Gxa-gZ-CwO" id="yEY-XM-LGa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -66,9 +68,6 @@
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                             </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="loginButtonTap:" destination="-1" eventType="touchUpInside" id="Xkb-kx-HD1"/>
-                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -134,9 +133,6 @@
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                             </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="logoutButtonTap:" destination="-1" eventType="touchUpInside" id="Juh-dJ-Oi9"/>
-                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>

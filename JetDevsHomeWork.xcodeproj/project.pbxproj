@@ -56,6 +56,7 @@
 		CE669B9B2B4DA33E00A2E0F6 /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669B9A2B4DA33E00A2E0F6 /* FloatingTextField.swift */; };
 		CE82CA382B565D0A00685CC6 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82CA372B565D0A00685CC6 /* String+Extension.swift */; };
 		CE82CA3C2B58E17E00685CC6 /* Validation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82CA3B2B58E17E00685CC6 /* Validation+Extension.swift */; };
+		CE82CA402B58E8F100685CC6 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82CA3F2B58E8F100685CC6 /* RealmManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		CE669B9A2B4DA33E00A2E0F6 /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FloatingTextField.swift; path = JetDevsHomeWork/Login/Views/FloatingTextField.swift; sourceTree = SOURCE_ROOT; };
 		CE82CA372B565D0A00685CC6 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		CE82CA3B2B58E17E00685CC6 /* Validation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Validation+Extension.swift"; sourceTree = "<group>"; };
+		CE82CA3F2B58E8F100685CC6 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 				4E677BFD272B82D9006E325E /* TabBar */,
 				4E677C2427322F70006E325E /* Fonts */,
 				CE669B712B4CF43800A2E0F6 /* Network */,
+				CE82CA3E2B58E8D200685CC6 /* Database */,
 				4E677BCD272B827F006E325E /* AppDelegate.swift */,
 				4E677BD1272B827F006E325E /* ViewController.swift */,
 				4E677BD3272B827F006E325E /* Main.storyboard */,
@@ -360,6 +363,7 @@
 		4E677C4927323092006E325E /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				CE82CA432B58EC6900685CC6 /* Observable */,
 				CE82CA3A2B58E15B00685CC6 /* Validations */,
 				CE82CA362B565CF900685CC6 /* String */,
 				CE669B922B4D4AA100A2E0F6 /* Date */,
@@ -412,7 +416,6 @@
 			isa = PBXGroup;
 			children = (
 				CE669B7F2B4D04D200A2E0F6 /* ErrorTracker.swift */,
-				CE669B8C2B4D0AF200A2E0F6 /* Observable+Ext.swift */,
 				CE669B8E2B4D0B1500A2E0F6 /* ActivityIndicator.swift */,
 			);
 			path = Utility;
@@ -473,6 +476,22 @@
 				CE669B9A2B4DA33E00A2E0F6 /* FloatingTextField.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CE82CA3E2B58E8D200685CC6 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				CE82CA3F2B58E8F100685CC6 /* RealmManager.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		CE82CA432B58EC6900685CC6 /* Observable */ = {
+			isa = PBXGroup;
+			children = (
+				CE669B8C2B4D0AF200A2E0F6 /* Observable+Ext.swift */,
+			);
+			path = Observable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -653,6 +672,7 @@
 				CE669B702B4CF2AE00A2E0F6 /* AccountRouter.swift in Sources */,
 				4E677BFF272B8319006E325E /* BaseTabBarController.swift in Sources */,
 				CE669B8F2B4D0B1500A2E0F6 /* ActivityIndicator.swift in Sources */,
+				CE82CA402B58E8F100685CC6 /* RealmManager.swift in Sources */,
 				CE669B8D2B4D0AF200A2E0F6 /* Observable+Ext.swift in Sources */,
 				CE669B942B4D4AAD00A2E0F6 /* Date+Extension.swift in Sources */,
 				CE669B822B4D072100A2E0F6 /* LoginViewModel.swift in Sources */,

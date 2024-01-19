@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import Realm
+import RealmSwift
 
 struct LoginRequestModel: Codable {
     
@@ -37,6 +39,9 @@ struct UserModel: Codable {
         case createdAt = "created_at"
     }
     
+    func transform() -> RMUser {
+        return RMUser(userId: userId, userName: userName, createdAt: createdAt, userProfileUrl: userProfileUrl.absoluteString)
+    }
 }
 
 class ResponseModel<T: Codable>: BaseResponseModel, Codable {
@@ -62,4 +67,29 @@ protocol BaseResponseModel {
     
     var result: Int { get set }
     var errorMessage: String { get set }
+}
+
+
+class RMUser: Object {
+    @Persisted(primaryKey: true) var userId: Int
+    @Persisted var userName: String
+    @Persisted var createdAt: String
+    @Persisted var userProfileUrl: String
+    
+    
+    override init() {
+        
+    }
+    
+    init(userId: Int, userName: String, createdAt: String, userProfileUrl: String) {
+        super.init()
+        self.userId = userId
+        self.userName = userName
+        self.createdAt = createdAt
+        self.userProfileUrl = userProfileUrl
+    }
+    
+    func transform() -> UserModel {
+        return UserModel.init(userId: userId, userName: userName, createdAt: createdAt, userProfileUrl: URL(string: userProfileUrl)!)
+    }
 }
